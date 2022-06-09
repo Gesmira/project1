@@ -12,20 +12,50 @@ links:
 slides: example
 summary: An example of using the in-built project page.
 tags:
-- Deep Learning
-title: Example Project
+- R
+title: Predicting Breast Cancer Using Gene Expression Data in R
 url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
 ---
+# Overview 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+In this project, I predicted whether or not a patient has breast cancer only based on their gene expression data. 
 
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.
+From a practical standpoint, this would be a very useful model for both hospitals or a business idea! Cancer is the second leading cause of death in the U.S. [(CDC, 2020)](https://www.cdc.gov/cancer/dcpc/research/update-on-cancer-deaths/index.htm#:~:text=Cancer%20was%20the%20second%20leading,females%20and%20317%2C731%20among%20males.) and as we know, our health care system is overburdened [(Forbes, 2021)](https://www.forbes.com/sites/williamhaseltine/2021/07/26/overwhelmed-us-hospital-systems-a-look-into-the-future/). Thus, having a machine learning model that can detect cancer simply based on gene expression, would expedite the testing process, require less doctor time, and overall improve patient outcomes. 
 
-Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.
+# About the Model
 
-Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.
+I used 3 breast cancer datasets to train a model on predicting breast cancer. The models used are: 
 
-Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.
+- KNN
+
+  - Performs well for continuous, numeric data
+  - Simple and easy to understand
+  - Has performed well for gene expression classification in the past
+
+- SVM
+  
+  - Performs well for binary classification
+  - Performs well for high number of features
+  - Uses distance metric 
+
+- Random Forest
+
+  - Performs well for many data points
+  - Bagging
+  - Has performed well for gene expression previously
+
+Lastly, I will combine all three into an ensemble model. 
+
+# About the Data
+
+I chose 3 datasets with gene expression data measuring both cancerous and normal breast tissue. The data were from published articles, but were obtained from the Gene Expression Omnibus website hosted by NCBI.
+
+- [Clarke C, Madden SF, Doolan P, Aherne ST et al. Correlating transcriptional networks to breast cancer survival: a large-scale coexpression analysis. Carcinogenesis 2013 Oct;34(10):2300-8.](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE42568)
+
+- [Planche A, Bacac M, Provero P, Fusco C et al. Identification of prognostic molecular features in the reactive stroma of human breast and prostate cancer. PLoS One 2011;6(5):e18640. ](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE26910)
+
+- [Richardson AL, Wang ZC, De Nicolo A, Lu X et al. X chromosomal abnormalities in basal-like human breast cancer. Cancer Cell 2006 Feb;9(2):121-32.](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7904)
+
