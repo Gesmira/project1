@@ -8,9 +8,9 @@ links:
 - icon: twitter
   icon_pack: fab
   name: Follow
-  url: https://twitter.com/georgecushen
+  url: 
 slides: example
-summary: An example of using the in-built project page.
+summary: Using machine learning 
 tags:
 - R
 title: Predicting Breast Cancer Using Gene Expression Data in R
