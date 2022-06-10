@@ -19,6 +19,23 @@ url_pdf: ""
 url_slides: ""
 url_video: ""
 ---
+```{r, message = FALSE, warning = FALSE}
+packages = c("dplyr", "devtools", "affy", "edgeR", "corrplot", "GEOquery", "missForest", 
+             "impute", "randomForest", "DMwR", "caret", "gmodels", "pROC")
+if_not_install_package <- lapply(
+  packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = TRUE)
+    }
+  }
+)
+
+install_github("vqv/ggbiplot")
+library(ggbiplot)
+```
+
 # Overview 
 
 In this project, I predicted whether or not a patient has breast cancer only based on their gene expression data. 
@@ -59,3 +76,39 @@ I chose 3 datasets with gene expression data measuring both cancerous and normal
 
 - [Richardson AL, Wang ZC, De Nicolo A, Lu X et al. X chromosomal abnormalities in basal-like human breast cancer. Cancer Cell 2006 Feb;9(2):121-32.](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7904)
 
+
+First, I will download the data files from the GEO website using the GEOquery package. The `getGEOSuppFiles()` function downloads the appropriate .CEL files that we will need. 
+
+```{r, message = FALSE, warning = FALSE}
+filePath_1 = getGEOSuppFiles("GSE42568")
+filePath_2 = getGEOSuppFiles("GSE26910")
+filePath_3 = getGEOSuppFiles("GSE7904")
+
+```
+
+
+Since the files are in a compressed tar format, they must be 'untarred' so they can be read in. We will get the current path so the path can be pasted with the file names when we load in the data. 
+
+```{r, message = FALSE, warning = FALSE}
+path <- getwd()
+untar(tarfile = row.names(filePath_1), exdir = paste0(path, "/GSE42568_RAW"))
+untar(tarfile = row.names(filePath_2), exdir = paste0(path, "/GSE26910_RAW"))
+untar(tarfile = row.names(filePath_3), exdir = paste0(path, "/GSE7904_RAW"))
+
+```
+
+
+
+The Datasets will be read in using the `ReadAffy()` Function from the [Affy Package](https://www.bioconductor.org/packages/release/bioc/html/affy.html). 
+
+```{r, message = FALSE, warning = FALSE}
+cancer_1<- ReadAffy(celfile.path = paste0(path, "/GSE42568_RAW/"), compress = TRUE)
+cancer_2<- ReadAffy(celfile.path = paste0(path, "/GSE26910_RAW/"), compress = TRUE)
+cancer_3<- ReadAffy(celfile.path = paste0(path, "/GSE7904_RAW/"), compress = TRUE)
+
+```
+
+# Inspect Objects
+```{r, message = FALSE, warning = FALSE}
+cancer_1
+```
