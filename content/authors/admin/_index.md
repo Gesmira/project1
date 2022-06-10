@@ -12,7 +12,7 @@ education:
 email: "gesmiramolla@gmail.com"
 highlight_name: true
 interests:
-- Geneomics
+- Genomics
 - Single-cell Biology 
 - R 
 organizations:
