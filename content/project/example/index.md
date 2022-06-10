@@ -19,22 +19,7 @@ url_pdf: ""
 url_slides: ""
 url_video: ""
 ---
-```{r, message = FALSE, warning = FALSE}
-packages = c("dplyr", "devtools", "affy", "edgeR", "corrplot", "GEOquery", "missForest", 
-             "impute", "randomForest", "DMwR", "caret", "gmodels", "pROC")
-if_not_install_package <- lapply(
-  packages,
-  FUN = function(x) {
-    if (!require(x, character.only = TRUE)) {
-      install.packages(x, dependencies = TRUE)
-      library(x, character.only = TRUE)
-    }
-  }
-)
 
-install_github("vqv/ggbiplot")
-library(ggbiplot)
-```
 
 # Overview 
 
@@ -75,6 +60,24 @@ I chose 3 datasets with gene expression data measuring both cancerous and normal
 - [Planche A, Bacac M, Provero P, Fusco C et al. Identification of prognostic molecular features in the reactive stroma of human breast and prostate cancer. PLoS One 2011;6(5):e18640. ](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE26910)
 
 - [Richardson AL, Wang ZC, De Nicolo A, Lu X et al. X chromosomal abnormalities in basal-like human breast cancer. Cancer Cell 2006 Feb;9(2):121-32.](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7904)
+
+
+```{r, message = FALSE, warning = FALSE}
+packages = c("dplyr", "devtools", "affy", "edgeR", "corrplot", "GEOquery", "missForest", 
+             "impute", "randomForest", "DMwR", "caret", "gmodels", "pROC")
+if_not_install_package <- lapply(
+  packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = TRUE)
+    }
+  }
+)
+
+install_github("vqv/ggbiplot")
+library(ggbiplot)
+```
 
 
 First, I will download the data files from the GEO website using the GEOquery package. The `getGEOSuppFiles()` function downloads the appropriate .CEL files that we will need. 
