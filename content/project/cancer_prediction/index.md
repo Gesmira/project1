@@ -11,7 +11,7 @@ slides: example
 summary: Using machine learning
 tags: R
 image:
-  caption: Photo by rawpixel on Unsplash
+  caption: ""
   focal_point: Smart
 url_code: ''
 url_pdf: ''
