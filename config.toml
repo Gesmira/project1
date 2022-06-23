@@ -1,0 +1,9 @@
+baseURL = "https://www.gesmira.com/"
+languageCode = "en-us"
+title = "gesmira"
+theme = "starter-hugo-academic"
+[params]
+description = ""
+keywords = "R, single cell, biology, computational biology"
+author = "Gesmira Molla"
+og_image = ""
