@@ -13,7 +13,6 @@ email: "gesmiramolla@gmail.com"
 highlight_name: true
 interests:
 - Genomics
-- Single-cell Biology 
 - R 
 - Volunteering 
 - Cooking, Mindfulness, Travel
