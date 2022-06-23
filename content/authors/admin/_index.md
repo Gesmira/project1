@@ -12,8 +12,8 @@ education:
 email: "gesmiramolla@gmail.com"
 highlight_name: true
 interests:
-- Genomics
-- R 
+- Genomics and Single-cell Biology
+- R and Python
 - Volunteering 
 - Cooking, Mindfulness, Travel
 organizations:
