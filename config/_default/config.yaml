@@ -6,6 +6,7 @@ theme: "starter-hugo-academic"
 
 title: Gesi # Website name
 baseURL: "https://gesmira.com/" # Website URL
+copyright: ''
 
 ############################
 ## LANGUAGE
