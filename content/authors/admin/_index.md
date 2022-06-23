@@ -15,6 +15,8 @@ interests:
 - Genomics
 - Single-cell Biology 
 - R 
+- Volunteering 
+- Cooking, Mindfulness, Travel
 organizations:
 - name: ""
   url: ""
