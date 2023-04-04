@@ -8,17 +8,11 @@ education:
   - course: BS in Biochemistry
     institution: Northeastern University
     year: 2020
-
 email: "gesmiramolla@gmail.com"
 highlight_name: true
-interests:
-- Genomics and Single-cell Biology
-- R and Python
-- Volunteering 
-- Cooking, Mindfulness, Travel
 organizations:
-- name: ""
-  url: ""
+- name: Computational Biologist in the Satija Lab
+  url: "https://satijalab.org/"
 role: ""
 social:
 - icon: envelope
