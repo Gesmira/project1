@@ -8,7 +8,7 @@ links:
   name: Follow
   url: null
 slides: example
-summary: Using machine learning
+summary: KNN, SVM, Random Forest
 tags: R
 image:
   caption: "hello"
@@ -284,7 +284,7 @@ exprs_df_2_na_t <- as.data.frame(t(exprs_df_2_na))
 exprs_df_3_na_t <- as.data.frame(t(exprs_df_3_na))
 ```
 
-Note that I did not include the actual imputation function output as the code lets out a warning message that is impossible to suppress, but the code is included in the .Rmd file. The command is like so: `exprs_df_1_na_t <- impute.knn(as.matrix(exprs_df_1_na_t) , k = 10)` for each dataframe. 
+Note that I did not include the actual imputation function output, but the code is included in the .Rmd file. The command is like so: `exprs_df_1_na_t <- impute.knn(as.matrix(exprs_df_1_na_t) , k = 10)` for each dataframe. 
 
 ```{r, message = FALSE, warning = FALSE, include = FALSE}
 # Run impute.knn w 10 nearest neighbors 
