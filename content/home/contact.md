@@ -12,7 +12,12 @@ title: Contact
 subtitle:
 
 content:
-  # Automatically link email and phone or display as text?
+  email: gesmiramolla@gmail.com
+  email: gmolla@nygenome.org
+  address:
+    city: New York
+    region: NY
+  # Automatically link email and phone
   autolink: true
 
   # Email form provider
